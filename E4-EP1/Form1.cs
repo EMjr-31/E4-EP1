@@ -54,6 +54,7 @@ namespace E4_EP1
                 emp1.Apellido = txtApellido.Text;
                 emp1.Cargo = cboxCargo.SelectedItem.ToString();
                 emp1.Horas = Convert.ToInt32(txtHoras.Text);
+                limpiar();
             }
             if (contador == 2)
             {
@@ -61,6 +62,7 @@ namespace E4_EP1
                 emp2.Apellido = txtApellido.Text;
                 emp2.Cargo = cboxCargo.SelectedItem.ToString();
                 emp2.Horas = Convert.ToInt32(txtHoras.Text);
+                limpiar();
             }
             if (contador == 3)
             {
@@ -68,6 +70,7 @@ namespace E4_EP1
                 emp3.Apellido = txtApellido.Text;
                 emp3.Cargo = cboxCargo.SelectedItem.ToString();
                 emp3.Horas = Convert.ToInt32(txtHoras.Text);
+                limpiar();
             }
             if (contador == 3) {
                 if (emp1.Cargo == "Gerente" && emp2.Cargo == "Asistente" && emp3.Cargo == "Secretaria")
@@ -148,13 +151,13 @@ namespace E4_EP1
                     }
                 }
                 ///Descuentos ISS
-                emp1.Iss = emp1.Sueldo * 0.525;
-                emp2.Iss = emp2.Sueldo * 0.525;
-                emp3.Iss = emp3.Sueldo * 0.525;
+                emp1.Iss = emp1.Sueldo * 0.0525;
+                emp2.Iss = emp2.Sueldo * 0.0525;
+                emp3.Iss = emp3.Sueldo * 0.0525;
                 ///Descuentos AFP
-                emp1.Afp = emp1.Sueldo * 0.688;
-                emp2.Afp = emp2.Sueldo * 0.688;
-                emp3.Afp = emp3.Sueldo * 0.688;
+                emp1.Afp = emp1.Sueldo * 0.0688;
+                emp2.Afp = emp2.Sueldo * 0.0688;
+                emp3.Afp = emp3.Sueldo * 0.0688;
                 ///Descuentos RENTA
                 emp1.Renta = emp1.Sueldo * 0.10;
                 emp2.Renta = emp2.Sueldo * 0.10;
@@ -163,7 +166,18 @@ namespace E4_EP1
                 emp1.Sueldoliquido = emp1.Sueldo - emp1.Iss - emp1.Afp - emp1.Renta;
                 emp2.Sueldoliquido = emp2.Sueldo - emp2.Iss - emp1.Afp - emp2.Renta;
                 emp3.Sueldoliquido = emp3.Sueldo - emp3.Iss - emp1.Afp - emp3.Renta;
+
+                ///Mensajes 
+                MessageBox.Show("Empelado: " + emp1.Nombre + " " + emp1.Apellido + "\n Descuento ISS: "+emp1.Iss+ "\n Descuento AFP: " + emp1.Afp+ "\n Descuento Renta: " + emp1.Renta + "\n Sueldo Liquido: " + emp1.Sueldoliquido );
+                MessageBox.Show("Empelado: " + emp2.Nombre + " " + emp2.Apellido + "\n Descuento ISS: " + emp2.Iss + "\n Descuento AFP: " + emp2.Afp + "\n Descuento Renta: " + emp1.Renta + "\n Sueldo Liquido: " + emp2.Sueldoliquido);
+                MessageBox.Show("Empelado: " + emp3.Nombre + " " + emp3.Apellido + "\n Descuento ISS: " + emp3.Iss + "\n Descuento AFP: " + emp3.Afp + "\n Descuento Renta: " + emp1.Renta + "\n Sueldo Liquido: " + emp3.Sueldoliquido);
             }
+        }
+        public void limpiar()
+        {
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtHoras.Text = "";
         }
     }
 }
