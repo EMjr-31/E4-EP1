@@ -106,6 +106,7 @@
             this.txtHoras.Name = "txtHoras";
             this.txtHoras.Size = new System.Drawing.Size(100, 20);
             this.txtHoras.TabIndex = 7;
+            this.txtHoras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHoras_KeyPress);
             // 
             // btnIngresar
             // 
@@ -115,6 +116,7 @@
             this.btnIngresar.TabIndex = 8;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // cboxCargo
             // 
