@@ -73,37 +73,39 @@ namespace E4_EP1
                 limpiar();
             }
             if (contador == 3) {
+                ////Sueldos 
+                if (emp1.Horas < 160) { emp1.Sueldo = emp1.Horas * 9.75; }
+                else
+                {
+                    if (emp1.Horas >= 160)
+                    {
+                        emp1.Sueldo = (160) * 9.75 + (emp1.Horas - 160) * 11.50;
+                    }
+                }
+
+                if (emp2.Horas < 160) { emp2.Sueldo = emp2.Horas * 9.75; }
+                else
+                {
+                    if (emp2.Horas >= 160)
+                    {
+                        emp2.Sueldo = (160) * 9.75 + (emp2.Horas - 160) * 11.50;
+                    }
+                }
+                if (emp3.Horas < 160) { emp3.Sueldo = emp3.Horas * 9.75; }
+                else
+                {
+                    if (emp3.Horas >= 160)
+                    {
+                        emp3.Sueldo = (160) * 9.75 + (emp3.Horas - 160) * 11.50;
+                    }
+                }
+                ///Cargos
                 if (emp1.Cargo == "Gerente" && emp2.Cargo == "Asistente" && emp3.Cargo == "Secretaria")
                 {
                     MessageBox.Show("NO HAY BONOS");
                 }
                 else
                 {
-                    ////Sueldos 
-                    if (emp1.Horas < 160) { emp1.Sueldo = emp1.Horas * 9.75; }
-                    else {
-                        if(emp1.Horas >= 160){
-                            emp1.Sueldo = (160)* 9.75+(emp1.Horas-160)*11.50;
-                        }
-                    }
-
-                    if (emp2.Horas < 160) { emp2.Sueldo = emp2.Horas * 9.75; }
-                    else
-                    {
-                        if (emp2.Horas >= 160)
-                        {
-                            emp2.Sueldo = (160) * 9.75 + (emp2.Horas - 160) * 11.50;
-                        }
-                    }
-                    if (emp3.Horas < 160) { emp3.Sueldo = emp3.Horas * 9.75; }
-                    else
-                    {
-                        if (emp3.Horas >= 160)
-                        {
-                            emp3.Sueldo = (160) * 9.75 + (emp3.Horas - 160) * 11.50;
-                        }
-                    }
-
                     ///Bonos 
                     if (emp1.Cargo == "Gerente")
                     {
